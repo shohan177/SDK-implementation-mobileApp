@@ -8,6 +8,8 @@ import { VideoEnable, Keyboard } from "../../../assets/icons";
 import { createMeeting, getToken } from "../../../config/api";
 import { SCREEN_NAMES } from "../../../navigators/screenNames";
 import { useNavigation } from "@react-navigation/native";
+import { useContext } from "react";
+import { MeetingContex } from "../../../../../VideoSdk";
 export default function StartorJoinMeetingActionSheet({
   setvisible,
   visible,
@@ -25,7 +27,7 @@ export default function StartorJoinMeetingActionSheet({
 
   const startMeeting = async () => {
     const token = await getToken();
-    const meetingId = await createMeeting(token);
+    const meetingId = `a3en-kih1-ls2r`;
     if (meetingId) {
       setvisible(false);
       navigation.navigate(SCREEN_NAMES.MeetingInfo, {

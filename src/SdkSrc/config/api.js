@@ -2,15 +2,15 @@ const HOST_URL = "http://192.168.0.104:9000";
 
 export const getToken = async () => {
   try {
-    const response = await fetch(`${HOST_URL}/get-token`, {
+    const response = await fetch(`https://backend.hellosuperstars.com/api/sdk/get-token`, {
       method: "GET",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
     });
-    const { token } = await response.json();
-    return token;
+    const data = await response.json();
+    return data.token;
   } catch (e) {
     console.log(e);
   }

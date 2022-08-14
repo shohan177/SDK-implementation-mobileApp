@@ -1,22 +1,22 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
-import {LinearTextGradient} from 'react-native-text-gradient';
+import { StyleSheet, Text, View } from 'react-native';
+// import {LinearTextGradient} from 'react-native-text-gradient';
 import VideoPlayer from 'react-native-video-player';
 
-function Video({title, image}) {
+function Video({ title, image }) {
   return (
     <View style={styles.topCard}>
-      <LinearTextGradient
+      {/* <LinearTextGradient
         style={styles.fonts}
         locations={[0, 1]}
         colors={['#ffaa00', '#fcfab6']}
         start={{x: 0, y: 0}}
-        end={{x: 1, y: 0}}>
-        <Text>{title}</Text>
-      </LinearTextGradient>
+        end={{x: 1, y: 0}}> */}
+      <Text>{title}</Text>
+      {/* </LinearTextGradient> */}
       {/* <UnderlineImage /> */}
       <View
-        style={{borderWidth: 0.3, borderColor: 'black', marginVertical: 10}}
+        style={{ borderWidth: 0.3, borderColor: 'black', marginVertical: 10 }}
       />
       {/* <View style={styles.bannerRow}>
         <Image
@@ -29,7 +29,7 @@ function Video({title, image}) {
       </View> */}
 
       <View
-        style={{height: 180, backgroundColor: 'lightblue', marginBottom: 18}}>
+        style={{ height: 180, backgroundColor: 'lightblue', marginBottom: 18 }}>
         <VideoPlayer
           video={{
             uri: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',

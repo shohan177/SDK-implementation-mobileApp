@@ -1,11 +1,11 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import React, {useEffect, useMemo, useRef, useState} from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import MainStack from './MainStack';
 import AuthStack from './AuthStack';
 import io from 'socket.io-client';
-import {AuthContext} from '../Constants/context';
+import { AuthContext } from '../Constants/context';
 import AppUrl from '../RestApi/AppUrl';
 import Loader from '../Screen/Auth/Loader';
 import linking from '../SdkSrc/navigators/linking';
@@ -61,7 +61,7 @@ const Routes = () => {
         setUserInfo(data);
         setLoginStatus(data);
       }
-    } catch (error) {}
+    } catch (error) { }
   };
 
   let axiosConfig = {
@@ -145,7 +145,7 @@ const Routes = () => {
           setLoading(false);
         }, 800);
       }
-    } catch (error) {}
+    } catch (error) { }
   };
 
   if (loading) {
@@ -170,9 +170,9 @@ const Routes = () => {
         posts,
       }}>
       <NavigationContainer linking={linking}>
-        <Stack.Navigator screenOptions={{headerShown: false}}>
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
           {/* !!loginStatus */}
-          {true ? <>{MainStack(Stack)}</> : <>{AuthStack(Stack)}</>}
+          {loginStatus ? <>{MainStack(Stack)}</> : <>{AuthStack(Stack)}</>}
         </Stack.Navigator>
       </NavigationContainer>
     </AuthContext.Provider>

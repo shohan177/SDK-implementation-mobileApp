@@ -33,6 +33,7 @@ import { useNavigation, CommonActions } from "@react-navigation/native";
 import useRaisedHandParticipants from "../../utils/useRaisedHandParticipants";
 import { useMeetingAppContext } from "../../context/MeetingAppContextDef";
 import { SCREEN_NAMES } from "../../navigators/screenNames";
+import navigationStrings from "../../../Constants/navigationStrings";
 
 export const TAB_COMPONENT_MODES = {
   CHAT: "CHAT",
@@ -124,12 +125,13 @@ export default function MeetingViewer({ videoOn }) {
 
   const exitMeeting = () => {
     leave();
-    navigation.dispatch(
-      CommonActions.reset({
-        index: 1,
-        routes: [{ name: SCREEN_NAMES.UpcomingMeeting }],
-      })
-    );
+    return navigation.navigate(navigationStrings.MENU)
+    // navigation.dispatch(
+    //   CommonActions.reset({
+    //     index: 0,
+    //     routes: [{ name: SCREEN_NAMES.UpcomingMeeting }],
+    //   })
+    // );
   };
 
   const backAlert = () => {
@@ -144,7 +146,7 @@ export default function MeetingViewer({ videoOn }) {
       {
         style: "default",
         text: "No",
-        onPress: () => {},
+        onPress: () => { },
       },
     ]);
   };
@@ -241,6 +243,7 @@ export default function MeetingViewer({ videoOn }) {
   };
 
   const dismissSheet = () => {
+
     setBottomVisible(false);
     setCurrentTabModes("");
   };

@@ -1,6 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
 import moment from 'moment';
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Image, Linking, Text, TouchableOpacity, View } from 'react-native';
 import { FlatGrid } from 'react-native-super-grid';
 import { AuthContext } from '../../Constants/context';
@@ -8,11 +8,13 @@ import imagePath from '../../Constants/imagePath';
 import navigationStrings from '../../Constants/navigationStrings';
 import AppUrl from '../../RestApi/AppUrl';
 import styles from './ActivitiesCardStyle';
+import StartorJoinMeetingActionSheet from '../../SdkSrc/scenes/upcomingMeeting/components/StartorJoinMeetingActionSheet';
 
 
 const ActivitiesCard = ({ childActivityEventList, childActivityEventType }) => {
   const navigation = useNavigation()
-  const { useInfo, authContext } = useContext(AuthContext);
+
+
 
   let title = "";
   switch (childActivityEventType) {
@@ -91,15 +93,21 @@ const ActivitiesCard = ({ childActivityEventList, childActivityEventType }) => {
     let days = parseInt((EventDateWithStartTime - CurrentDateWithTime) / (1000 * 60 * 60 * 24));
     let hours = parseInt((EventDateWithStartTime - CurrentDateWithTime) / (1000 * 60 * 60) % 24);
     let minutes = parseInt(Math.abs(EventDateWithStartTime.getTime() - CurrentDateWithTime.getTime()) / (1000 * 60) % 60);
+
     const handleJoinNow = () => {
+
+
+
       if (childActivityEventType == 'liveChat') {
-        Linking.openURL(`https://www.hellosuperstars.com/joinRoom/login?user=${useInfo.username}&id=${eventRegistration.room_id}&type=${childActivityEventType}`)
+        alert('under devolpment')
       } else if (childActivityEventType == 'qna') {
-        // redirect to star chat box
+        alert('under devolpment')
       } else if (childActivityEventType == 'meetup') {
-        Linking.openURL(`https://www.hellosuperstars.com/joinRoom/login?user=${useInfo.username}&id=${event.event_link}&type=${childActivityEventType}`)
+        alert('under devolpment')
       } else if (childActivityEventType == 'learningSession') {
-        Linking.openURL(`https://www.hellosuperstars.com/joinRoom/login?user=${useInfo.username}&id=${event.room_id}&type=${childActivityEventType}`)
+        navigation.navigate('VideoSdk', {
+          meetingId: event.room_id
+        })
       } else {
 
       }
@@ -310,16 +318,7 @@ const ActivitiesCard = ({ childActivityEventList, childActivityEventType }) => {
         renderItem={renderEventItem}
       />
 
-      {/* 
-      <View style={styles.Header}>
-        <Image source={imagePath.BgLane} style={styles.HeaderImg} />
-        <Text style={styles.HeaderText}>Audition Session</Text>
-      </View>
 
-      <View style={styles.Activities}>
-        <Image source={imagePath.NoActivities} style={styles.ImgBanner} />
-        <Text style={styles.ActivitiesText}>NO ITEM AVAILABLE</Text>
-      </View> */}
 
     </>
   )

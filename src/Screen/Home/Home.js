@@ -1,6 +1,6 @@
-import {useNavigation} from '@react-navigation/native';
-import React, {useState} from 'react';
-import {Button, SafeAreaView, View} from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import React, { useState } from 'react';
+import { Button, SafeAreaView, View } from 'react-native';
 import HeaderComp from '../../Components/HeaderComp';
 import AppUrl from '../../RestApi/AppUrl';
 import HomeOnlineStars from './HomeOnlineStars/HomeOnlineStars';
@@ -19,10 +19,7 @@ function Home() {
         {/*.............. custom header start .............. */}
         <HeaderComp />
 
-        <Button
-          title="videoSdk"
-          onPress={() => navigation.navigate('VideoSdk')}
-        />
+
 
         {/* ..........custom header end....................  */}
 
@@ -32,7 +29,7 @@ function Home() {
         {/* ...........online active end................... */}
 
         {/* ...........Home Page card start................... */}
-        <View style={{paddingBottom: 120}}>
+        <View style={{ paddingBottom: 120 }}>
           <PostContainer
             path={AppUrl.AllPostWithPagination + 5 + `?page=${postPage}`}
             postPage={postPage}
