@@ -525,16 +525,16 @@ const PostCard = ({ post, callform = null }) => {
                         <View style={{ justifyContent: 'center' }}>
                           <TouchableOpacity
                             onPress={() => handlePress('meetup')}>
-                            <LinearGradient
+                            {/* <LinearGradient
                               style={styles.meetupBtn}
                               colors={[
                                 '#F1A817',
                                 '#F5E67D',
                                 '#FCB706',
                                 '#DFC65C',
-                              ]}>
-                              <Text style={styles.meetupTxt}>Book Now</Text>
-                            </LinearGradient>
+                              ]}> */}
+                            <Text style={styles.meetupTxt}>Book Now</Text>
+                            {/* </LinearGradient> */}
                           </TouchableOpacity>
                         </View>
                       </>
@@ -558,16 +558,16 @@ const PostCard = ({ post, callform = null }) => {
                           }}>
                           <TouchableOpacity
                             onPress={() => handlePress('LearningSession')}>
-                            <LinearGradient
+                            {/* <LinearGradient
                               style={styles.meetupBtn}
                               colors={[
                                 '#F1A817',
                                 '#F5E67D',
                                 '#FCB706',
                                 '#DFC65C',
-                              ]}>
-                              <Text style={styles.meetupTxt}>Register Now</Text>
-                            </LinearGradient>
+                              ]}> */}
+                            <Text style={styles.meetupTxt}>Register Now</Text>
+                            {/* </LinearGradient> */}
                           </TouchableOpacity>
                         </View>
                       </>
@@ -590,16 +590,16 @@ const PostCard = ({ post, callform = null }) => {
                             marginVertical: 5,
                           }}>
                           <TouchableOpacity onPress={() => handlePress('qna')}>
-                            <LinearGradient
+                            {/* <LinearGradient
                               style={styles.meetupBtn}
                               colors={[
                                 '#F1A817',
                                 '#F5E67D',
                                 '#FCB706',
                                 '#DFC65C',
-                              ]}>
-                              <Text style={styles.meetupTxt}>Register Now</Text>
-                            </LinearGradient>
+                              ]}> */}
+                            <Text style={styles.meetupTxt}>Register Now</Text>
+                            {/* </LinearGradient> */}
                           </TouchableOpacity>
                         </View>
                       </>
@@ -623,16 +623,16 @@ const PostCard = ({ post, callform = null }) => {
                           }}>
                           <TouchableOpacity
                             onPress={() => handlePress('livechat')}>
-                            <LinearGradient
+                            {/* <LinearGradient
                               style={styles.meetupBtn}
                               colors={[
                                 '#F1A817',
                                 '#F5E67D',
                                 '#FCB706',
                                 '#DFC65C',
-                              ]}>
-                              <Text style={styles.meetupTxt}>Register Now</Text>
-                            </LinearGradient>
+                              ]}> */}
+                            <Text style={styles.meetupTxt}>Register Now</Text>
+                            {/* </LinearGradient> */}
                           </TouchableOpacity>
                         </View>
                       </>
@@ -657,16 +657,16 @@ const PostCard = ({ post, callform = null }) => {
                           <TouchableOpacity
                           // onPress={() => handlePress('livechat')}
                           >
-                            <LinearGradient
+                            {/* <LinearGradient
                               style={styles.meetupBtn}
                               colors={[
                                 '#F1A817',
                                 '#F5E67D',
                                 '#FCB706',
                                 '#DFC65C',
-                              ]}>
-                              <Text style={styles.meetupTxt}>Register Now</Text>
-                            </LinearGradient>
+                              ]}> */}
+                            <Text style={styles.meetupTxt}>Register Now</Text>
+                            {/* </LinearGradient> */}
                           </TouchableOpacity>
                         </View>
                       </>

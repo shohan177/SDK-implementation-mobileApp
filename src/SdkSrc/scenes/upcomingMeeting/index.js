@@ -16,8 +16,11 @@ import StartorJoinMeetingActionSheet from "./components/StartorJoinMeetingAction
 import { SCREEN_NAMES } from "../../navigators/screenNames";
 import Avatar from "../../components/Avatar";
 import { handleLinking } from "../../utils/common";
+import { useNavigation } from "@react-navigation/native";
 
 export default function UpComingMeeting({ navigation }) {
+
+
   const [visible, setvisible] = useState(false);
   const [meetingId, setmeetingId] = useState("");
 

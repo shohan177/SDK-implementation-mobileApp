@@ -1,7 +1,7 @@
 //import liraries
-import {useNavigation} from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import axios from 'axios';
-import React, {useContext, useState} from 'react';
+import React, { useContext, useState } from 'react';
 import {
   Dimensions,
   ImageBackground,
@@ -13,20 +13,20 @@ import {
   View,
 } from 'react-native';
 import * as Animatable from 'react-native-animatable';
-import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import LinearGradient from 'react-native-linear-gradient';
-import {LinearTextGradient} from 'react-native-text-gradient';
+// import {LinearTextGradient} from 'react-native-text-gradient';
 import Entypo from 'react-native-vector-icons/Entypo';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import LoaderComp from '../../Components/LoaderComp';
-import {AuthContext} from '../../Constants/context';
+import { AuthContext } from '../../Constants/context';
 import imagePath from '../../Constants/imagePath';
 import AppUrl from '../../RestApi/AppUrl';
 // create a component
 const Login = () => {
   const navigation = useNavigation();
   const windowWidth = Dimensions.get('window').width;
-  const {authContext} = useContext(AuthContext);
+  const { authContext } = useContext(AuthContext);
   const [email, setEmail] = useState(null);
   const [pass, setPass] = useState(null);
   const [buffer, setBuffer] = useState(false);
@@ -96,19 +96,19 @@ const Login = () => {
               // duration="1500"
 
               source={imagePath.logo}
-              style={{height: 150, width: 150}}
+              style={{ height: 150, width: 150 }}
             />
           </View>
 
           <Animatable.View style={styles.footer} animation="slideInUp">
-            <LinearTextGradient
+            {/* <LinearTextGradient
               style={styles.title}
               locations={[0, 1]}
               colors={['#ffaa00', '#fcfab6']}
               start={{x: 0, y: 0}}
-              end={{x: 1, y: 0}}>
-              <Text>LOGIN</Text>
-            </LinearTextGradient>
+              end={{x: 1, y: 0}}> */}
+            <Text>LOGIN</Text>
+            {/* </LinearTextGradient> */}
 
             {/* email input  */}
             <Text style={styles.inputText}>Email</Text>
@@ -126,7 +126,7 @@ const Login = () => {
                 onChangeText={newText => setEmail(newText)}
               />
             </View>
-            <Text style={{color: 'red', marginLeft: 8, marginBottom: -10}}>
+            <Text style={{ color: 'red', marginLeft: 8, marginBottom: -10 }}>
               {error}
             </Text>
             {/* password input  */}
@@ -167,7 +167,7 @@ const Login = () => {
                 <LinearGradient
                   style={styles.login_btn}
                   colors={['#F1A817', '#F5E67D', '#FCB706', '#DFC65C']}>
-                  <Text style={{color: 'black'}}>LOGIN</Text>
+                  <Text style={{ color: 'black' }}>LOGIN</Text>
                 </LinearGradient>
                 {/* <Text style={styles.input_title}>LOGIN</Text> */}
               </TouchableOpacity>

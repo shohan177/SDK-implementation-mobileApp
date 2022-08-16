@@ -6,8 +6,11 @@ import { MeetingAppProvider } from "../../context/MeetingAppContextDef";
 import { Colors } from "../../styles";
 import { LoaderScreen } from "react-native-ui-lib";
 import { useRoute } from "@react-navigation/native";
+import { useContext } from "react";
+import { AuthContext } from "../../../Constants/context";
 
 export default function MeetingInitializer() {
+  const { useInfo } = useContext(AuthContext)
   const route = useRoute();
   const { meetingId, videoOn, micOn, token } = route?.params?.meetingConfig;
 
@@ -23,10 +26,10 @@ export default function MeetingInitializer() {
             meetingId,
             micEnabled: micOn,
             webcamEnabled: videoOn,
-            name: "Demo User",
+            name: useInfo?.first_name + " " + useInfo?.last_name,
             notification: {
-              title: "Video SDK Meeting",
-              message: "Meeting is running.",
+              title: "Your are live now",
+              message: "Connected",
             },
           }}
           token={token}

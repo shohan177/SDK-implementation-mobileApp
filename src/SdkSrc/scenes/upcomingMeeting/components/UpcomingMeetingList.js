@@ -22,10 +22,10 @@ export default function UpcomingMeetingList({ setvisible }) {
       }}
     >
       <Button
-        iconSource={plusIcon}
+        // iconSource={plusIcon}
         borderRadius={4}
         size={Button.sizes.large}
-        label={"New Meeting"}
+        label={"JOIN NOW"}
         onPress={() => {
           setvisible(true);
         }}

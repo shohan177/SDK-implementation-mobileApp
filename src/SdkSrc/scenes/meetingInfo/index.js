@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import {
   View,
   Text,
@@ -28,10 +28,12 @@ import { Button } from "react-native-ui-lib";
 import { useRoute } from "@react-navigation/native";
 import { SCREEN_NAMES } from "../../navigators/screenNames";
 import { RTCView, mediaDevices } from "@videosdk.live/react-native-sdk";
-
+import { getToken } from "../../config/api";
+import { MeetingContex } from "../../../../VideoSdk";
 export default function MeetingInfo({ navigation }) {
   const route = useRoute();
-  const { meetingId, token } = route.params;
+  const [token, setToken] = useState();
+  const { meetingId } = useContext(MeetingContex);
   const [micOn, setMicon] = useState(true);
   const [videoOn, setVideoOn] = useState(true);
 
@@ -43,6 +45,12 @@ export default function MeetingInfo({ navigation }) {
   const [tracks, setTrack] = useState("");
 
   useEffect(async () => {
+
+    const token = await getToken();
+    setToken(token)
+
+
+
     mediaDevices
       .getUserMedia({ audio: true, video: true })
       .then((stream) => {
@@ -182,7 +190,7 @@ export default function MeetingInfo({ navigation }) {
               paddingHorizontal: 12,
             }}
           >
-            <Text
+            {/* <Text
               numberOfLines={2}
               style={{
                 color: Colors.WHITE,
@@ -193,29 +201,12 @@ export default function MeetingInfo({ navigation }) {
               }}
             >
               {meetingId}
-            </Text>
-            <Button
-              avoidMinWidth
-              avoidInnerPadding
-              style={{
-                justifyContent: "center",
-                marginLeft: 10,
-                backgroundColor: "transparent",
-              }}
-              onPress={() => {
-                Clipboard.setString(meetingId);
-                ToastAndroid.show(
-                  "Meeting Id copied successfully",
-                  ToastAndroid.SHORT
-                );
-              }}
-            >
-              <CopyContent fill={Colors.CYAN_BLUE} />
-            </Button>
+            </Text> */}
+
           </View>
           <ButtonContainer
             containerStyle={{ marginTop: vertical_20 }}
-            label={"Join Meeting"}
+            label={"Join Now"}
             labelStyle={{
               fontSize: convertRFValue(14),
               color: Colors.WHITE,

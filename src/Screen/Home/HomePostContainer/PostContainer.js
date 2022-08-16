@@ -192,7 +192,8 @@ const PostContainer = ({
             <View
               style={{
                 position: 'absolute',
-                bottom: 15,
+                zIndex: 2,
+                bottom: 70,
                 left: '40%',
                 backgroundColor: '#00000071',
                 alignItems: 'center',

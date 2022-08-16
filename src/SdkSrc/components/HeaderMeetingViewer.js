@@ -64,7 +64,8 @@ const HeaderMeetingViewer = ({ setCurrentTabModes, animeVal, exitMeeting }) => {
                 color: Colors.WHITE,
               }}
             >
-              {title}
+              Hello SuperStars
+              {/* {title} */}
             </Text>
           </View>
         </View>
