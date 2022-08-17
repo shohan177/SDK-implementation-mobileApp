@@ -107,7 +107,7 @@ const Login = () => {
               colors={['#ffaa00', '#fcfab6']}
               start={{x: 0, y: 0}}
               end={{x: 1, y: 0}}> */}
-            <Text>LOGIN</Text>
+            <Text style={styles.title}>LOGIN</Text>
             {/* </LinearTextGradient> */}
 
             {/* email input  */}
