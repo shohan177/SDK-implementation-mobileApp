@@ -95,7 +95,7 @@ const SignUp = () => {
                 colors={['#ffaa00', '#fcfab6']}
                 start={{x: 0, y: 0}}
                 end={{x: 1, y: 0}}> */}
-              <Text>SIGN UP</Text>
+              <Text style={styles.title}>SIGN UP</Text>
               {/* </LinearTextGradient> */}
               {/* Name input  */}
               <Text style={styles.inputText}>First Name</Text>
