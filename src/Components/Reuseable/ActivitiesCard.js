@@ -103,7 +103,9 @@ const ActivitiesCard = ({ childActivityEventList, childActivityEventType }) => {
       } else if (childActivityEventType == 'qna') {
         alert('under devolpment')
       } else if (childActivityEventType == 'meetup') {
-        alert('under devolpment')
+        navigation.navigate('VideoSdk', {
+          meetingId: event.event_link
+        })
       } else if (childActivityEventType == 'learningSession') {
         navigation.navigate('VideoSdk', {
           meetingId: event.room_id
