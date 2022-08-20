@@ -172,7 +172,7 @@ const Routes = () => {
       <NavigationContainer linking={linking}>
         <Stack.Navigator screenOptions={{ headerShown: false }}>
           {/* !!loginStatus */}
-          {loginStatus ? <>{MainStack(Stack)}</> : <>{AuthStack(Stack)}</>}
+          {true ? <>{MainStack(Stack)}</> : <>{AuthStack(Stack)}</>}
         </Stack.Navigator>
       </NavigationContainer>
     </AuthContext.Provider>

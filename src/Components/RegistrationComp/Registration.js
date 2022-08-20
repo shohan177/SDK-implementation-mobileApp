@@ -224,7 +224,7 @@ const RegistrationComp = ({
               colors={['#ffaa00', '#fcfab6']}
               start={{x: 0, y: 0}}
               end={{x: 1, y: 0}}> */}
-            <Text>Registration</Text>
+            <Text  style={styles.fonts}>Registration</Text>
             {/* </LinearTextGradient> */}
             {/* <UnderlineImage /> */}
             <View

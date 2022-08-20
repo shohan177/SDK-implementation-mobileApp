@@ -429,7 +429,7 @@ const Menu = () => {
                         colors={['#ffaa00', '#fcfab6']}
                         start={{x: 0, y: 0}}
                         end={{x: 1, y: 0}}> */}
-                      <Text>Learning Seassion</Text>
+                      <Text  style={styles.titelText}>Learning Seassion</Text>
                       {/* </LinearTextGradient> */}
                     </View>
                     <View style={styles.carouselContainer_gray}>
@@ -475,7 +475,7 @@ const Menu = () => {
                         colors={['#ffaa00', '#fcfab6']}
                         start={{x: 0, y: 0}}
                         end={{x: 1, y: 0}}> */}
-                      <Text>Live Chat</Text>
+                      <Text   style={styles.titelText}>Live Chat</Text>
                       {/* </LinearTextGradient> */}
                     </View>
                     <View style={styles.carouselContainer_gray}>
@@ -520,7 +520,7 @@ const Menu = () => {
                         colors={['#ffaa00', '#fcfab6']}
                         start={{x: 0, y: 0}}
                         end={{x: 1, y: 0}}> */}
-                      <Text>Upcoming Events</Text>
+                      <Text   style={styles.titelText}>Upcoming Events</Text>
                       {/* </LinearTextGradient> */}
                     </View>
                     <View style={styles.carouselContainer_gray}>
@@ -594,7 +594,7 @@ const Menu = () => {
                         colors={['#ffaa00', '#fcfab6']}
                         start={{x: 0, y: 0}}
                         end={{x: 1, y: 0}}> */}
-                      <Text>Meet up Events</Text>
+                      <Text  style={styles.titelText}>Meet up Events</Text>
                       {/* </LinearTextGradient> */}
                     </View>
                     <View style={styles.carouselContainer_gray}>

@@ -2,6 +2,7 @@ import React from 'react';
 import VideoSdk from '../../VideoSdk';
 import MessengerCom from '../Components/MessengerCom/MessengerCom';
 import navigationStrings from '../Constants/navigationStrings';
+import LiveChatSdk from '../LiveChatSdk/LiveChatSdk';
 import Message from '../Screen/Message/Message';
 import MessageStar from '../Screen/Message/MessageStar';
 import PromoView from '../Screen/PromoSection/PromoView';
@@ -24,6 +25,7 @@ const MainStack = Stack => {
       <Stack.Screen name="ChatWithStar" component={ChatWithStar} />
       <Stack.Screen name={navigationStrings.PROMOSHOW} component={PromoView} />
       <Stack.Screen name={'VideoSdk'} component={VideoSdk} />
+      <Stack.Screen name={'LiveChatSdk'} component={LiveChatSdk} />
     </>
   );
 };

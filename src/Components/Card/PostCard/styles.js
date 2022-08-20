@@ -167,8 +167,13 @@ const styles = StyleSheet.create({
     paddingVertical: 5,
   },
   meetupTxt: {
-    color: 'black',
+    color: 'white',
     fontWeight: 'bold',
+    borderWidth:0.5,
+    borderColor:'#ffaa00',
+    padding:3,
+    borderRadius:3
+  
   },
 
   // Learn Card

@@ -12,7 +12,7 @@ function Video({ title, image }) {
         colors={['#ffaa00', '#fcfab6']}
         start={{x: 0, y: 0}}
         end={{x: 1, y: 0}}> */}
-      <Text>{title}</Text>
+      <Text style={styles.fonts}>{title}</Text>
       {/* </LinearTextGradient> */}
       {/* <UnderlineImage /> */}
       <View
