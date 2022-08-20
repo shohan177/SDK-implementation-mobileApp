@@ -34,6 +34,8 @@ import useRaisedHandParticipants from "../../utils/useRaisedHandParticipants";
 import { useMeetingAppContext } from "../../context/MeetingAppContextDef";
 import { SCREEN_NAMES } from "../../navigators/screenNames";
 import navigationStrings from "../../../Constants/navigationStrings";
+import { useContext } from "react";
+import { MeetingContex } from "../../../../VideoSdk";
 
 export const TAB_COMPONENT_MODES = {
   CHAT: "CHAT",
@@ -63,7 +65,7 @@ export default function MeetingViewer({ videoOn }) {
   useSortActiveParticipants();
 
   const { participantRaisedHand } = useRaisedHandParticipants();
-
+  const { type } = useContext(MeetingContex)
   const bottomRef = useRef();
 
   const _handleChatMessage = (data, localParticipantId) => {
@@ -258,20 +260,29 @@ export default function MeetingViewer({ videoOn }) {
           backgroundColor: Colors.DARK_BACKGROUND,
         }}
       >
+
         {presenterId && isLandscape ? null : (
-          <HeaderMeetingViewer
-            setCurrentTabModes={setCurrentTabModes}
-            animeVal={animeVal}
-            exitMeeting={exitMeeting}
-          />
+          <>
+            {type !== "videoChat" ?
+              <HeaderMeetingViewer
+                setCurrentTabModes={setCurrentTabModes}
+                animeVal={animeVal}
+                exitMeeting={exitMeeting}
+              />
+              :
+              <></>
+            }
+          </>
         )}
         {presenterId && !localScreenShareOn ? (
+
           <ParticipantPresenter
             presenterId={presenterId}
             partCipantIDArr={filterPartCipantIDArr}
             presstoHide={toggleBars}
           />
         ) : presenterId && localScreenShareOn ? (
+
           <LocalParticipantPresenter
             toggleBars={toggleBars}
             localPresenterId={presenterId}

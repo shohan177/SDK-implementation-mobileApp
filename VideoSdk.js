@@ -23,7 +23,7 @@ export const MeetingContex = React.createContext()
 const RootStack = createStackNavigator();
 
 export default function VideoSdk({ route }) {
-  const { meetingId } = route.params
+  const { meetingId, type = null } = route.params
 
 
   const [splashVisible, setsplashVisible] = useState(true);
@@ -40,7 +40,7 @@ export default function VideoSdk({ route }) {
 
   return (
 
-    <MeetingContex.Provider value={{ meetingId }}>
+    <MeetingContex.Provider value={{ meetingId, type }}>
 
       <RootStack.Navigator
         mode="modal"

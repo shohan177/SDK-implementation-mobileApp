@@ -69,7 +69,7 @@ const ActivitiesCard = ({ childActivityEventList, childActivityEventType }) => {
         break;
     }
 
-
+    console.log('event data', event)
     let ActualEventDate = moment(event?.date ? event?.date : event?.event_date).format("YYYY-MM-DD");
 
     // console.log('ActualEventDate------------', ActualEventDate);
@@ -96,20 +96,31 @@ const ActivitiesCard = ({ childActivityEventList, childActivityEventType }) => {
 
     const handleJoinNow = () => {
 
-
+      console.log('jdshfgjs', event)
 
       if (childActivityEventType == 'liveChat') {
-        alert('under devolpment')
+
+        navigation.navigate('VideoSdk', {
+          meetingId: `a3en-kih1-ls2r`,
+          type: 'videoChat'
+        })
+
       } else if (childActivityEventType == 'qna') {
         alert('under devolpment')
       } else if (childActivityEventType == 'meetup') {
+
         navigation.navigate('VideoSdk', {
-          meetingId: event.event_link
+          meetingId: event.room_id,
+          type: 'meetup'
         })
+
       } else if (childActivityEventType == 'learningSession') {
+
         navigation.navigate('VideoSdk', {
-          meetingId: event.room_id
+          meetingId: event.room_id,
+          type: 'learningSession'
         })
+
       } else {
 
       }

@@ -19,8 +19,8 @@ function Home() {
         {/*.............. custom header start .............. */}
         <HeaderComp />
 
-
-<Button title='Live Chat' onPress={()=>navigation.navigate('LiveChatSdk')} />
+        {/* 
+<Button title='Live Chat' onPress={()=>navigation.navigate('LiveChatSdk')} /> */}
         {/* ..........custom header end....................  */}
 
         {/* ...........online active stars................... */}
